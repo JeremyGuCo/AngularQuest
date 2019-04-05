@@ -1,14 +1,9 @@
-<ul>
-    <li>
-        <a [routerLink]="['/']">Menu</a>
-    </li>
-    <li>
-      <a [routerLink]="['/sign-up']">Sign Up</a>
-    </li>
-    <li>
-      <a [routerLink]="['user-profile']">User Profile</a>
-    </li>
-  </ul>
-  
-  <router-outlet></router-outlet>
+<div class="corps">
+  <h1><a [routerLink]="['/']">Menu</a></h1>
+  <h1><a [routerLink]="['/sign-up']">Sign Up</a></h1>
+  <h1><a [routerLink]="['user-profile']">User Profile</a></h1>
+</div>
 
+<div class="contenu">
+<router-outlet></router-outlet>
+</div>

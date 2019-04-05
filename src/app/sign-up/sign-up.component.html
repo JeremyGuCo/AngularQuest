@@ -1,1 +1,42 @@
-<h1>Email</h1><input type="email" name="email"/>
+<form (ngSubmit)="myForm.valid && onSubmit()" #myForm="ngForm">
+<div>
+   <label for="user-order">User</label>
+   <input
+      name="title-order"
+      type="text"
+      [(ngModel)]="model.title"
+      #title="ngModel"
+      required
+      maxlength="24"
+      minlength="4"
+   />
+</div>
+<div *ngIf="title.errors && myForm.submitted">
+   <span *ngIf="title.errors.required && myForm.submitted" style="color: red"
+      >Le champ est requis</span
+   >
+   <span *ngIf="title.errors.maxlength && myForm.submitted" style="color: red">La quantité maximale doit être inférieure à 24</span>
+   <span *ngIf="title.errors.minlength && myForm.submitted" style="color: red">La quantité minimale doit être supérieure à 4</span>
+</div>
+<div>
+   <label for="contact-order">Contact</label>
+   <input
+      name="contact-order"
+      type="email"
+      [(ngModel)]="model.contact"
+      #contact="ngModel"
+      required
+      email
+   />
+</div>
+<div *ngIf="contact.errors && myForm.submitted">
+   <span *ngIf="contact.errors.required && myForm.submitted" style="color: red"
+      >Le champ est requis</span
+   >
+   <span *ngIf="contact.errors.email && myForm.submitted" style="color: red"
+      >Le champ email est invalide</span
+   >
+</div>
+<button type="reset">Restaurer</button>
+<button type="submit">Sauvegarder</button>
+</form>

@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
+  model: Order = new Order();
+
   constructor() { }
+
+  onSubmit() {
+  }
 
   ngOnInit() {
   }
 
+}
+
+export class Order {
+  title: string;
+  quantity: number;
+  date: Date;
+  contact: string;
 }

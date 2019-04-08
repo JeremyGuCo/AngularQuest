@@ -8,6 +8,7 @@ import { HighlightDirective } from './user-profile/highlight.directive';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MenuComponent } from './menu/menu.component';
+import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
 
 
 
@@ -19,6 +20,7 @@ HighlightDirective,
 SignUpComponent,
 UserProfileComponent,
 MenuComponent,
+CocktailListComponent,
 
 ],
 imports: [

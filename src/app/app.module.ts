@@ -9,6 +9,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MenuComponent } from './menu/menu.component';
 import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
+import {HttpClientModule} from  '@angular/common/http';
 
 
 
@@ -22,11 +23,13 @@ UserProfileComponent,
 MenuComponent,
 CocktailListComponent,
 
+
 ],
 imports: [
 BrowserModule,
 AppRoutingModule,
 FormsModule,
+HttpClientModule,
 
 
 

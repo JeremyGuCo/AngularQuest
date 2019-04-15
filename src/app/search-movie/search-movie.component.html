@@ -1,0 +1,49 @@
+<form
+  (ngSubmit)="movieForm.valid && onSubmit()"
+  [formGroup]="movieForm"
+  #myForm="ngForm"
+>
+
+<div formGroupName="titleIdMovie">
+  <div class="form-group">
+    <label for="title">Titre</label>
+    <input class="form-control" name="title" type="text" formControlName="title" />
+  </div>
+  <div class="form-group">
+      <label for="id">Identifiant</label>
+      <input  class="form-control" name="id" formControlName="id" />
+    </div>
+  <div *ngIf="movieForm.controls.titleIdMovie.errors && myForm.submitted">
+        <span *ngIf="movieForm.controls.titleIdMovie.errors.isRequired">Le champ "Identifiant"
+  ou "Titre" doit être rempli</span>
+  </div>
+</div>
+
+    <div class="form-group">
+        <label class="form mr-4"for="type">Type :</label>
+        <select id="type" formControlName="type">
+          <option *ngFor="let type of types"  [value]="type.id">{{type.name}}</option>
+        </select>
+    </div>
+
+
+  <div class="form-group">
+    <label for="release">Année de sortie</label>
+    <input class="form-control" name="release" type="number" formControlName="release" />
+  </div>
+  <div *ngIf="movieForm.controls.release.errors && myForm.submitted">
+    <span *ngIf="movieForm.controls.release.errors.min">L'année doit être comprise entre {{min}} et
+      {{max}}</span>
+</div>
+  
+  <div class="form-group">
+      <label class="form mr-4"for="type">Fiche :</label>
+      <select id="descMovie" formControlName="desc">
+        <option *ngFor="let desc of descs"  [value]="desc.id">{{desc.name}}</option>
+      </select>
+  </div>
+
+  <button type="reset">Restaurer</button>
+  <button type="submit" >Sauvegarder</button>
+
+</form>

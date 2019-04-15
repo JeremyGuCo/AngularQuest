@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormBuilder, FormArray } from '@angular/forms';
+import { minDateValidator } from './ min-date.validator';
 
 @Component({
   selector: 'sign-up',
@@ -7,21 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  model: Order = new Order();
+  orderForm = this.fb.group({
+    title: ['', Validators.required],
+    quantity: ['', [Validators.required, Validators.max(5)]],
+    date: ['', Validators.required],
+    contact: ['', [Validators.required, Validators.email]],
+    payments: this.fb.array([])
+  });
 
-  constructor() { }
-
-  onSubmit() {
-  }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
+    this.orderForm.valueChanges
+      .subscribe(value => {
+        console.log('orderForm value changes : ', value);
+      });
   }
 
-}
+  addPayments() {
+    const paymentForm = this.fb.group({
+      date: ['', [Validators.required, minDateValidator]],
+      amount: ['', Validators.required]
+    });
+    const payments = this.orderForm.get('payments') as FormArray;
+    payments.push(paymentForm);
+  }
 
-export class Order {
-  title: string;
-  quantity: number;
-  date: Date;
-  contact: string;
+  get payments(): FormArray {
+    return this.orderForm.get('payments') as FormArray;
+  }
+
+  onSubmit() {
+    console.log('oderForm submitted : ', this.orderForm.value);
+  }
 }

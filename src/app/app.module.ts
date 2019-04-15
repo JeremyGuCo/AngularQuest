@@ -10,6 +10,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MenuComponent } from './menu/menu.component';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 
+import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
+import { HttpClientModule } from  '@angular/common/http';
+import { NasaComponent } from './nasa/nasa.component';
 
 
 
@@ -22,6 +25,9 @@ SignUpComponent,
 UserProfileComponent,
 MenuComponent,
 SearchMovieComponent,
+CocktailListComponent,
+NasaComponent,
+
 
 ],
 imports: [
@@ -29,6 +35,7 @@ BrowserModule,
 AppRoutingModule,
 FormsModule,
 ReactiveFormsModule,
+HttpClientModule,
 
 
 

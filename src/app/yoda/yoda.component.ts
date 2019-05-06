@@ -107,5 +107,10 @@ export class YodaComponent implements OnInit {
     } else {
       this.isAverage=true;
     }
+    if (this.average<12){
+      this.checked = false;
+    } else {
+      this.checked = true;
+    }
   }
 }

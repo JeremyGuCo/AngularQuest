@@ -1,6 +1,16 @@
 <h1>Les réponses justes tu choisiras</h1>
-<h2>Ta moyenne générale est de {{average}}/20</h2>
+<div id="menu">
+  <h2>Ta moyenne générale est de {{ average }}/20</h2>
+  <p *ngIf="checked" class="speech-bubble">"Okay young padawan now you feel the dev force !"</p>
+  <p *ngIf="!checked" class="speech-bubble"> "Go and never come back..."</p>
+  <img src="https://thumbs.gfycat.com/SmoothVigilantBumblebee-max-1mb.gif" />
+</div>
 
-
-<app-question  (change)= "calculateAverage()" *ngFor="let question of questions" [question]="question.title" [questions]="questions" [id]="question.id" (getAnswer)="onGetAnswer($event)"></app-question>
-
+<app-question
+  (change)="calculateAverage()"
+  *ngFor="let question of questions"
+  [question]="question.title"
+  [answer]="question.answer"
+  [id]="question.id"
+  (getAnswer)="onGetAnswer($event)"
+></app-question>

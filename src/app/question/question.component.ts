@@ -8,12 +8,13 @@ import { Question } from '../model/question.model';
 })
 export class QuestionComponent implements OnInit {
 
-  @Input() public questions: Question[];
+  @Input() public answer: boolean;
   @Input() public question: string;
   @Input() public id: string;
   public checked: boolean;
-
+  public isAnswer: boolean;
   @Output() public getAnswer:  EventEmitter<any> = new EventEmitter();
+
 
   constructor() { }
 
@@ -25,6 +26,11 @@ export class QuestionComponent implements OnInit {
   sendAnswer(id: string, value: boolean): void {
     this.getAnswer.emit(`${id}-${value}`); 
     this.checked = true;
+    if (value===this.answer){
+      this.isAnswer = true;
+    } else {
+      this.isAnswer = false;
+    }
 }
 
 

@@ -1,0 +1,12 @@
+<h2>{{ question }}</h2>
+<div [hidden]="checked" class="btn-group btn-group-toggle" ngbRadioGroup>
+      <label ngbButtonLabel class="mr-4">
+        <input ngbButton type="radio" value="id" (change)="sendAnswer(id, true)" name="answer"> Vrai
+      </label>
+      <label ngbButtonLabel class="mr-4">
+        <input ngbButton type="radio" value="id" (change)="sendAnswer(id, false)" name="answer"> Faux
+      </label>
+    </div>
+    <div *ngIf="questions.answer===" class="alert alert-success"> Bonne réponse ! {{questions.score}} points </div>
+    <div *ngIf="checked" class="alert alert-danger"> Mauvaise réponse !</div>
+    

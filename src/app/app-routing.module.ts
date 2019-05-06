@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
 import { NasaComponent } from './nasa/nasa.component';
+import { YodaComponent } from './yoda/yoda.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
 { path: '', component: UserProfileComponent },
 { path: 'cocktail-list', component: CocktailListComponent},
 { path: 'nasa', component: NasaComponent },
+{ path: 'yoda', component: YodaComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,6 @@
+<h1>Les réponses justes tu choisiras</h1>
+<h2>Ta moyenne générale est de {{average}}/20</h2>
+
+
+<app-question  (change)= "calculateAverage()" *ngFor="let question of questions" [question]="question.title" [questions]="questions" [id]="question.id" (getAnswer)="onGetAnswer($event)"></app-question>
+

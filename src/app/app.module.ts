@@ -13,6 +13,8 @@ import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { CocktailListComponent } from './cocktail-list/cocktail-list.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { NasaComponent } from './nasa/nasa.component';
+import { YodaComponent } from './yoda/yoda.component';
+import { QuestionComponent } from './question/question.component';
 
 
 
@@ -27,6 +29,8 @@ MenuComponent,
 SearchMovieComponent,
 CocktailListComponent,
 NasaComponent,
+YodaComponent,
+QuestionComponent,
 
 
 ],

@@ -42,7 +42,7 @@ export class SearchMovieComponent implements OnInit {
 
   isRequiredValidator(field1, field2): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-      if (control.get(field1).value !== '' && control.get(field2).value !== ' ') {
+      if (control.get(field1).value !== '' && control.get(field2).value !== '') {
         return null;
       } else {
         return { isRequired: { actual: control.get(field1).value, expected: control.get(field2).value } };
